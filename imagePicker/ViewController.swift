@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -45,12 +44,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let devices = AVCaptureDevice.devices()
-        for device in devices {
-            if (!device.hasMediaType(AVMediaTypeVideo)) {
-                cameraButton.enabled = false
-            }
-        }
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         topTextField.defaultTextAttributes = memeTextAttributes
         botTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = NSTextAlignment.Center
@@ -65,7 +59,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         }
     }
     
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -73,7 +66,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
         self.subscribeToKeyboardWillShow()
         self.subscribeToKeyboardWillHide()
     }
@@ -154,19 +146,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     func generateMemedImage() -> UIImage{
         self.navBar.hidden = true
         self.toolBar.hidden = true
-
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         self.navBar.hidden = false
         self.toolBar.hidden = false
-        
         return memedImage
-        
     }
     
     override func prefersStatusBarHidden() -> Bool {

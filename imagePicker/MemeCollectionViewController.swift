@@ -19,13 +19,10 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDelegate 
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes as [Meme]
-        
         if(memes.count == 0){
             let viewController = storyboard!.instantiateViewControllerWithIdentifier("ViewController") as! UIViewController
             self.presentViewController(viewController, animated: true, completion: nil)
         }
-        
-       
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,7 +45,6 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDelegate 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
-    
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
