@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182B19AE1AEF1FEC001707B4 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B19AD1AEF1FEC001707B4 /* MemeDetailViewController.swift */; };
+		182B19B01AEF2180001707B4 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B19AF1AEF2180001707B4 /* MemeCollectionViewCell.swift */; };
 		18529F531AEDB8CE0047B416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18529F521AEDB8CE0047B416 /* AppDelegate.swift */; };
 		18529F551AEDB8CE0047B416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18529F541AEDB8CE0047B416 /* ViewController.swift */; };
 		18529F581AEDB8CE0047B416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18529F561AEDB8CE0047B416 /* Main.storyboard */; };
-		18529F5A1AEDB8CE0047B416 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18529F591AEDB8CE0047B416 /* Images.xcassets */; };
 		18529F5D1AEDB8CE0047B416 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18529F5B1AEDB8CE0047B416 /* LaunchScreen.xib */; };
 		18529F691AEDB8CE0047B416 /* imagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18529F681AEDB8CE0047B416 /* imagePickerTests.swift */; };
+		18529F751AEDDD7E0047B416 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18529F741AEDDD7E0047B416 /* Meme.swift */; };
+		18529F771AEDF49A0047B416 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18529F761AEDF49A0047B416 /* MemeCollectionViewController.swift */; };
+		18529F791AEDF53A0047B416 /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18529F781AEDF53A0047B416 /* MemeTableViewController.swift */; };
+		18AFFAF31AFE655700880147 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AFFAF21AFE655700880147 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +31,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182B19AD1AEF1FEC001707B4 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
+		182B19AF1AEF2180001707B4 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		18529F4D1AEDB8CE0047B416 /* imagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18529F511AEDB8CE0047B416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18529F521AEDB8CE0047B416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18529F541AEDB8CE0047B416 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18529F571AEDB8CE0047B416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18529F591AEDB8CE0047B416 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18529F5C1AEDB8CE0047B416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		18529F621AEDB8CE0047B416 /* imagePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imagePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18529F671AEDB8CE0047B416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18529F681AEDB8CE0047B416 /* imagePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePickerTests.swift; sourceTree = "<group>"; };
+		18529F741AEDDD7E0047B416 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		18529F761AEDF49A0047B416 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
+		18529F781AEDF53A0047B416 /* MemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
+		18AFFAF21AFE655700880147 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +90,14 @@
 				18529F521AEDB8CE0047B416 /* AppDelegate.swift */,
 				18529F541AEDB8CE0047B416 /* ViewController.swift */,
 				18529F561AEDB8CE0047B416 /* Main.storyboard */,
-				18529F591AEDB8CE0047B416 /* Images.xcassets */,
 				18529F5B1AEDB8CE0047B416 /* LaunchScreen.xib */,
 				18529F501AEDB8CE0047B416 /* Supporting Files */,
+				18529F741AEDDD7E0047B416 /* Meme.swift */,
+				18529F761AEDF49A0047B416 /* MemeCollectionViewController.swift */,
+				18529F781AEDF53A0047B416 /* MemeTableViewController.swift */,
+				182B19AD1AEF1FEC001707B4 /* MemeDetailViewController.swift */,
+				182B19AF1AEF2180001707B4 /* MemeCollectionViewCell.swift */,
+				18AFFAF21AFE655700880147 /* Images.xcassets */,
 			);
 			path = imagePicker;
 			sourceTree = "<group>";
@@ -192,9 +207,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AFFAF31AFE655700880147 /* Images.xcassets in Resources */,
 				18529F581AEDB8CE0047B416 /* Main.storyboard in Resources */,
 				18529F5D1AEDB8CE0047B416 /* LaunchScreen.xib in Resources */,
-				18529F5A1AEDB8CE0047B416 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18529F771AEDF49A0047B416 /* MemeCollectionViewController.swift in Sources */,
+				18529F751AEDDD7E0047B416 /* Meme.swift in Sources */,
 				18529F551AEDB8CE0047B416 /* ViewController.swift in Sources */,
+				182B19AE1AEF1FEC001707B4 /* MemeDetailViewController.swift in Sources */,
+				182B19B01AEF2180001707B4 /* MemeCollectionViewCell.swift in Sources */,
+				18529F791AEDF53A0047B416 /* MemeTableViewController.swift in Sources */,
 				18529F531AEDB8CE0047B416 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = imagePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = imagePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +431,7 @@
 				18529F6E1AEDB8CE0047B416 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18529F6F1AEDB8CE0047B416 /* Build configuration list for PBXNativeTarget "imagePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +440,7 @@
 				18529F711AEDB8CE0047B416 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
