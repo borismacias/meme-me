@@ -28,6 +28,7 @@ class MemeTableViewController : UIViewController, UITableViewDataSource{
         self.tableView.reloadData()
     }
     
+    //Start tableView delegate functions
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memes.count
     }
@@ -41,10 +42,6 @@ class MemeTableViewController : UIViewController, UITableViewDataSource{
         cell.textLabel?.text = meme.top + " " + meme.bot
         cell.imageView?.image = meme.image
         
-        // If the cell has a detail label, we will put the evil scheme in.
-        if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = meme.top + " " + meme.bot        }
-        
         return cell
     }
     
@@ -55,4 +52,5 @@ class MemeTableViewController : UIViewController, UITableViewDataSource{
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }
+    //End tableView delegate functions
 }

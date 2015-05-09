@@ -17,6 +17,7 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         let object = UIApplication.sharedApplication().delegate
+        // Getting memes count just once (viewdidload) to set starting point
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes as [Meme]
         if(memes.count == 0){
@@ -27,12 +28,14 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDelegate 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        // Refreshing the memes array to catch changes
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes as [Meme]
         self.collectionView.reloadData()
     }
     
+    // Start collectionView delegate functions
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         let meme = memes[indexPath.item]
@@ -51,5 +54,6 @@ class MemeCollectionViewController : UIViewController, UICollectionViewDelegate 
         detailController.meme = self.memes[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
+    //End collectionView delegate functions
     
 }

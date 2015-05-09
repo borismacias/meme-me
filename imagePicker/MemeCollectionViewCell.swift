@@ -14,6 +14,7 @@ class MemeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var memeTopLabel: UILabel!
     @IBOutlet weak var memeBotLabel: UILabel!
     
+    // Setters
     func setText(topString : String, bottomString : String){
         memeTopLabel.text = topString
         memeBotLabel.text = bottomString

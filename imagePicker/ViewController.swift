@@ -35,15 +35,18 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
          self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
+    // SettingUp
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName : -3.0
     ]
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Enable the camera button just once
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         topTextField.defaultTextAttributes = memeTextAttributes
         botTextField.defaultTextAttributes = memeTextAttributes
@@ -53,19 +56,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         botTextField.borderStyle=UITextBorderStyle.None
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.text == "BOTTOM" || textField.text == "TOP" {
-            textField.text = ""
-        }
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        //Subscribe everytime the view appears
         self.subscribeToKeyboardWillShow()
         self.subscribeToKeyboardWillHide()
     }
@@ -76,6 +69,41 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         self.unsubscribeFromKeyboardWillHide()
         self.shareButton.enabled = false
     }
+    
+    // Start textfield delegate functions
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField.text == "BOTTOM" || textField.text == "TOP" {
+            textField.text = ""
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    // End textfield delegate functions
+    
+    func saveMeme(top: String, bot: String, image: UIImage, meme: UIImage){
+        var meme = Meme(top: top, bot: bot, image: image, meme: meme)
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+    }
+    
+    func generateMemedImage() -> UIImage{
+        self.navBar.hidden = true
+        self.toolBar.hidden = true
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame,
+            afterScreenUpdates: true)
+        let memedImage : UIImage =
+        UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.navBar.hidden = false
+        self.toolBar.hidden = false
+        return memedImage
+    }
+    
+    // Start imagePicker delegate functions/ interactions
     
     @IBAction func pickImage(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
@@ -101,6 +129,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // End imagePicker delegate functions/ interactions
+    
+    // Keyboard interactions
+    
     func keyboardWillShow(notification: NSNotification) {
         if self.botTextField.isFirstResponder() == true {
             self.view.frame.origin.y -= getKeyboardHeight(notification)
@@ -118,6 +150,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.CGRectValue().height
     }
+    
     
     func subscribeToKeyboardWillShow() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:"    , name: UIKeyboardWillShowNotification, object: nil)
@@ -137,26 +170,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             UIKeyboardWillHideNotification, object: nil)
     }
     
-    func saveMeme(top: String, bot: String, image: UIImage, meme: UIImage){
-        var meme = Meme(top: top, bot: bot, image: image, meme: meme)
-        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.memes.append(meme)
-    }
+    // End keyboard interactions
     
-    func generateMemedImage() -> UIImage{
-        self.navBar.hidden = true
-        self.toolBar.hidden = true
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
-            afterScreenUpdates: true)
-        let memedImage : UIImage =
-        UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.navBar.hidden = false
-        self.toolBar.hidden = false
-        return memedImage
-    }
-    
+    // Hides status bar
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

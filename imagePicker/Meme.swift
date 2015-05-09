@@ -10,10 +10,10 @@ import UIKit
 
 class Meme {
     
-    var top : String!
-    var bot : String!
-    var image : UIImage!
-    var meme : UIImage!
+    var top : String! //Top text
+    var bot : String! //Bottom text
+    var image : UIImage! //Image
+    var meme : UIImage! // Meme = image + bot text + top text
     
     init (top: String, bot: String, image: UIImage, meme: UIImage) {
         self.top = top
